@@ -197,77 +197,37 @@
             <h4 class="text-white font-weight-normal mb-4 pb-3">現在輸入您的優惠碼<br>並提供您的電話和信箱<br>即可獲得攝影折價100元<br>以及當天攤位任飲品折扣5元</h4>
             <div class="form-inline justify-content-center mb-4">
 
-
-            <!-- Formspree 表單 -->
             <form 
-            id="offerForm"
-            action="https://formspree.io/f/xpwdvwer" 
-            method="POST" 
-            class="row justify-content-center g-3"
+              action="https://formspree.io/f/xpwdvwer" 
+              method="POST"
             >
-                <!-- 折扣碼 -->
-                <div class="col-12 col-md-3">
-                    <input 
-                    type="text" 
-                    name="promo_code" 
-                    class="form-control form-control-lg" 
-                    placeholder="折扣碼" 
-                    pattern="^[Nn][Tt][Uu][Tt]0607$" 
-                    title="折扣碼不正確" 
-                    required
-                    >
-                </div>
-
-                <!-- 電話 -->
-                <div class="col-12 col-md-3">
-                    <input 
-                    type="tel" 
-                    name="phone" 
-                    class="form-control form-control-lg" 
-                    placeholder="您的電話📱" 
-                    required
-                    >
-                </div>
-
-                <!-- 信箱 -->
-                <div class="col-12 col-md-3">
-                    <input 
-                    type="email" 
-                    name="_replyto" 
-                    class="form-control form-control-lg" 
-                    placeholder="您的信箱📬" 
-                    required
-                    >
-                </div>
-
-                <!-- 送出按鈕 -->
-                <div class="col-12 col-md-2">
-                    <button 
-                    type="submit" 
-                    class="btn btn-primary btn-lg w-100"
-                    >
-                    送出🦝
-                    </button>
-                </div>
+              <input type="hidden" name="_subject" value="新的折扣碼報名">
+              
+              <input 
+                type="text" 
+                name="promo_code" 
+                placeholder="折扣碼" 
+                pattern="^[Nn][Tt][Uu][Tt]0607$" 
+                title="折扣碼不正確" 
+                required
+              >
+              
+              <input 
+                type="tel" 
+                name="phone" 
+                placeholder="您的電話📱" 
+                required
+              >
+            
+              <input 
+                type="email" 
+                name="_replyto" 
+                placeholder="您的信箱📬" 
+                required
+              >
+            
+              <button type="submit">送出🦝</button>
             </form>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content text-center">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title mx-auto" id="thankYouLabel">謝謝您的支持！</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    我們已收到您的資訊，過後將會回信確認，請在留意🥺。
-                </div>
-                <div class="modal-footer border-0 justify-content-center">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">關閉</button>
-                </div>
-                </div>
-            </div>
-            </div>
 
             
         </div>
