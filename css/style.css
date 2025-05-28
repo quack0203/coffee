@@ -9652,3 +9652,83 @@ h6,
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.inline-detail {
+  position: relative; /* ⬅️ 讓絕對定位找得到參考點 */
+  display: inline-block;
+  margin-right: 10px;
+  width: 120px; /* 自行調整寬度，避免內容擠壓時跳行 */
+}
+
+.inline-detail summary {
+  display: inline-block;
+  cursor: pointer;
+  list-style: none;
+}
+
+.inline-detail summary::-webkit-details-marker,
+.inline-detail summary::marker {
+  display: none;
+}
+
+.inline-detail summary::after {
+  content: '▾';
+  margin-left: 4px;
+  transition: transform 0.25s ease;
+}
+
+.inline-detail[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.inline-detail .detail-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 6px 8px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  z-index: 999;
+
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+
+  /* 加入 transition 過場動畫 */
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0s linear 0.25s;  /* 延遲 visibility: hidden */
+}
+
+
+.inline-detail[open] .detail-content {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+
+  /* visibility 馬上變 visible，取消延遲 */
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0s;
+}
+
+
+
+
